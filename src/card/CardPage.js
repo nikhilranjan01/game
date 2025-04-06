@@ -18,7 +18,7 @@ const CardPage = () => {
         <Row className="g-4">
           {favorites.map((game) => (
             <Col md={4} key={game.id}>
-              <Card className="shadow border-0 rounded-4">
+              <Card className="shadow border-0 rounded-4 h-100">
                 <Card.Img
                   variant="top"
                   src={game.background_image}
@@ -32,22 +32,32 @@ const CardPage = () => {
                       <strong>⭐ Rating:</strong> {game.rating}
                     </Card.Text>
                   </div>
-                  <Link to={`/library/${game.id}`} className="btn btn-dark rounded-pill mt-2">
-                    🎮 View Details
-                  </Link>
-                  <Button
-                    variant="danger"
-                    className="rounded-pill mt-2"
-                    onClick={() => dispatch(removeFavorite(game.id))}
-                  >
-                    💔 Remove from Favorites
-                  </Button>
+                  <div className="mt-auto">
+                    <Link to={`/library/${game.id}`} className="btn btn-dark rounded-pill mt-2 w-100">
+                      🎮 View Details
+                    </Link>
+                    <Button
+                      variant="danger"
+                      className="rounded-pill mt-2 w-100"
+                      onClick={() => dispatch(removeFavorite(game.id))}
+                    >
+                      💔 Remove from Favorites
+                    </Button>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
       )}
+
+      {/* Back to Home Button */}
+       <div className="text-center mt-5">
+          <Button as={Link} to="/" variant="dark" className="px-4 rounded-pill">
+            ⬅ Back to Home
+          </Button>
+        </div>
+      
     </Container>
   );
 };

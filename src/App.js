@@ -317,9 +317,11 @@ const AppContent = () => {
 const SignoutPage = () => {
   return (
     <div className="d-flex flex-column align-items-center mt-5 ">
-      <SignUp />
-      <Link to="/" className="btn btn-secondary mt-3">← Back to Home!!!!!!</Link>
-    </div>
+        <SignUp />
+        <Button as={Link} to="/" variant="dark" className="px-4 rounded-pill mt-3">
+          ⬅ Back to Home
+        </Button>
+      </div>
   );
 };
 
@@ -327,8 +329,10 @@ const SignoutPage = () => {
 const SignInPage = () => {
   return (
     <div className="d-flex flex-column align-items-center mt-5 ">
-      <SignIn />
-      <Link to="/" className="btn btn-secondary mt-3">← Back to Home!!!!!!</Link>
+     <SignIn />
+      <Button as={Link} to="/" variant="dark" className="px-4 rounded-pill mt-3">
+        ⬅ Back to Home
+      </Button>
     </div>
   );
 };

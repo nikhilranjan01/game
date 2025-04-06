@@ -210,10 +210,10 @@ const AppContent = () => {
           {/* Logged-in User */}
           <SignedIn>
             <div className="d-flex align-items-center gap-3">
-              <UserButton />
+             
               <Button
                 variant="outline-danger"
-                className="rounded-pill fw-semibold px-3"
+                className="rounded-pill fw-semibold px-3 py-3 py-lg-3 w-100"
                 onClick={() => signOut()}
               >
                 Logout
@@ -223,11 +223,16 @@ const AppContent = () => {
 
           {/* card section */}
 
-          <div className="d-flex align-items-center gap-3">
-            <Link to="/card" className="btn btn-outline-warning rounded-pill fw-semibold px-3 py-3 mx-3">
-              ❤️ Favorites
-            </Link>
-          </div>
+          {/* Favorites Button Section */}
+            <div className="d-flex flex-column flex-lg-row gap-1  mt-lg-0 ms-lg-2 py-3">
+              <Link
+                to="/card"
+                className="btn btn-outline-warning rounded-pill fw-semibold py-3 py-lg-3"
+              >
+                ❤️ Favorites
+              </Link>
+            </div>
+
 
         </Navbar.Collapse>
       </Navbar>

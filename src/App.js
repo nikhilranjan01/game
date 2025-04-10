@@ -148,9 +148,10 @@ const AppContent = () => {
   };
 
   const generatePaginationItems = () => {
-    const pageStart = Math.floor((currentPage - 1) / 20) * 3 + 1;
-    const pageEnd = Math.min(pageStart + 4, totalPages);
-
+    const pagesPerGroup = 5; // Number of page buttons to display
+    const pageStart = Math.floor((currentPage - 1) / pagesPerGroup) * pagesPerGroup + 1;
+    const pageEnd = Math.min(pageStart + pagesPerGroup - 1, totalPages);
+  
     let pages = [];
     for (let i = pageStart; i <= pageEnd; i++) {
       pages.push(
@@ -159,9 +160,10 @@ const AppContent = () => {
         </Pagination.Item>
       );
     }
-
+  
     return pages;
   };
+  
   const { signOut } = useClerk();
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ClerkProvider, SignedIn, SignedOut, SignIn, useClerk, SignUp, UserButton, useUser } from "@clerk/clerk-react";
 import { Container, Row, Col, Navbar, Form, FormControl, Button, Card, Dropdown, Pagination } from "react-bootstrap";
